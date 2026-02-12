@@ -19,24 +19,22 @@ class RidesService {
     List<Ride> rides,
     int requestedSeat,
   ) {
-    return rides.where((ride) => ride.remainingSeats == requestedSeat).toList();
+    return rides.where((ride) => ride.remainingSeats >= requestedSeat).toList();
   }
 
   //
   //  filter the rides   with several optional criteria (flexible filter options)
   //
   static List<Ride> filterBy({Location? departure, int? seatRequested}) {
+    List<Ride> result = availableRides;
+    
     if (departure != null) {
-      result = _filterByDeparture(rides, departure);
+      result = _filterByDeparture(result, departure);
     }
 
-    if (seatRequested != null) {}
-    return rides
-        .where(
-          (ride) =>
-              ride.departureLocation == departure ||
-              ride.remainingSeats == seatRequested,
-        )
-        .toList();
+    if (seatRequested != null) {
+      result = _filterBySeatRequested(result, seatRequested);
+    }
+    return result;
   }
 }
