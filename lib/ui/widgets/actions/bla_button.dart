@@ -37,6 +37,8 @@ class BlaButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: isPrimary ? BlaColors.primary : BlaColors.white,
           foregroundColor: isPrimary ? BlaColors.white : BlaColors.primary,
+          disabledBackgroundColor: BlaColors.disabled,
+          disabledForegroundColor: BlaColors.textLight,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(BlaSpacings.radius),

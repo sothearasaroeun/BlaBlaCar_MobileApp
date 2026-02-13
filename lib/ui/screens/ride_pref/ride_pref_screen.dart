@@ -25,6 +25,8 @@ class RidePrefScreen extends StatefulWidget {
 class _RidePrefScreenState extends State<RidePrefScreen> {
   void onRidePrefSelected(RidePref ridePref) {
     // 1 - Navigate to the rides screen (with a buttom to top animation)
+    RidePrefService.currentRidePref = ridePref;
+    RidePrefService.ridePrefsHistory.insert(0, ridePref);
   }
 
   @override
@@ -81,16 +83,7 @@ class _RidePrefScreenState extends State<RidePrefScreen> {
                   ),
                 ),
               ),
-
-              BlaButton(
-                text: "Search",
-                onPressed: () {
-                  print("search button pressed");
-                },
-                isPrimary: true,
-              ),
-              SizedBox(height: BlaSpacings.m),
-              
+             
             ],
           ),
         ),
