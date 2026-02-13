@@ -1,3 +1,4 @@
+import 'package:blabla/ui/screens/ride_pref/widgets/location_picker_screen.dart';
 import 'package:blabla/ui/widgets/display/bla_divider.dart';
 import 'package:flutter/material.dart';
 
@@ -66,7 +67,7 @@ class _RidePrefFormState extends State<RidePrefForm> {
   Future<void> _pickLocation(bool isDeparture) async {
     final selected = await Navigator.push(
       context,
-      AnimationUtils.createBottomToTopRoute(const Scaffold()),
+      AnimationUtils.createBottomToTopRoute(const LocationPickerScreen()),
     );
 
     if (selected is Location) {

@@ -51,13 +51,13 @@ class _RidePrefScreenState extends State<RidePrefScreen> {
         SizedBox(height: 16),
         Text(
           "Your pick of rides at low price",
-          style: BlaTextStyles.heading.copyWith(color: Colors.white),
+          style: BlaTextStyles.heading.copyWith(color: BlaColors.white),
         ),
         SizedBox(height: 100),
         Container(
           margin: EdgeInsets.symmetric(horizontal: BlaSpacings.xxl),
           decoration: BoxDecoration(
-            color: Colors.white, // White background
+            color: BlaColors.white, // White background
             borderRadius: BorderRadius.circular(16), // Rounded corners
           ),
           child: Column(
@@ -83,7 +83,7 @@ class _RidePrefScreenState extends State<RidePrefScreen> {
                   ),
                 ),
               ),
-             
+
             ],
           ),
         ),
